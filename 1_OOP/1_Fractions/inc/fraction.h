@@ -3,12 +3,6 @@
 
 #include <iostream>
 
-/* Operator*/
-// =
-// ++
-// --
-// << 
-
 class fraction
 {
     friend std::ostream& operator<<(std::ostream& s, const fraction &frac);
