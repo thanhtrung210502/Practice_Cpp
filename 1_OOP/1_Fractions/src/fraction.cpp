@@ -129,3 +129,159 @@ fraction fraction::operator/(const fraction &term)
 
     return result;      
 }
+
+fraction& fraction::operator+=(const fraction &term)
+{
+    *this = this->add(term);
+    return *this;
+}
+
+fraction& fraction::operator-=(const fraction &term)
+{
+    *this = this->sub(term);
+    return *this;
+}
+
+fraction& fraction::operator*=(const fraction &term)
+{
+    *this = this->multi(term);
+    return *this;
+}
+
+fraction& fraction::operator/=(const fraction &term)
+{
+    *this = this->divide(term);
+    return *this;
+}
+
+bool fraction::operator>(const fraction &term)
+{
+    int x = this->a * term.b;
+    int y = this->b * term.a;
+
+    if (x > y)
+    {
+        return true;
+    }
+    else
+    {
+        // Do nothing
+    }
+
+    return false;
+}
+
+bool fraction::operator>=(const fraction &term)
+{
+    int x = this->a * term.b;
+    int y = this->b * term.a;
+
+    if (x >= y)
+    {
+        return true;
+    }
+    else
+    {
+        // Do nothing
+    }
+
+    return false;
+}
+
+bool fraction::operator<(const fraction &term)
+{
+    int x = this->a * term.b;
+    int y = this->b * term.a;
+
+    if (x < y)
+    {
+        return true;
+    }
+    else
+    {
+        // Do nothing
+    }
+    
+    return false;
+}
+
+bool fraction::operator<=(const fraction &term)
+{
+    int x = this->a * term.b;
+    int y = this->b * term.a;
+
+    if (x <= y)
+    {
+        return true;
+    }
+    else
+    {
+        // Do nothing
+    }
+    
+    return false;
+}
+
+bool fraction::operator==(const fraction &term)
+{
+    int x = this->a * term.b;
+    int y = this->b * term.a;
+
+    if (x == y)
+    {
+        return true;
+    }
+    else
+    {
+        // Do nothing
+    }
+    
+    return false;
+}
+
+bool fraction::operator!=(const fraction &term)
+{
+    int x = this->a * term.b;
+    int y = this->b * term.a;
+
+    if (x != y)
+    {
+        return true;
+    }
+    else
+    {
+        // Do nothing
+    }
+    
+    return false;
+}
+
+fraction& fraction::operator++()
+{
+    this->a = this->a + this->b;
+    this->simplify();
+    return *this;
+}
+
+fraction& fraction::operator++(int)
+{
+    return ++(*this);
+}
+
+fraction& fraction::operator--()
+{
+    this->a = this->a - this->b;
+    this->simplify();
+    return *this;
+}
+
+fraction& fraction::operator--(int)
+{
+    return --(*this);
+}
+
+std::ostream& operator<<(std::ostream& s, const fraction &frac)
+{
+    s << frac.a << "/" << frac.b;
+    return s;
+}

@@ -3,8 +3,15 @@
 
 #include <iostream>
 
+/* Operator*/
+// =
+// ++
+// --
+// << 
+
 class fraction
 {
+    friend std::ostream& operator<<(std::ostream& s, const fraction &frac);
 private:
     int a;
     int b;
@@ -27,6 +34,20 @@ public:
     fraction operator-(const fraction &term);
     fraction operator*(const fraction &term);
     fraction operator/(const fraction &term);
+    fraction& operator+=(const fraction &term);
+    fraction& operator-=(const fraction &term);
+    fraction& operator*=(const fraction &term);
+    fraction& operator/=(const fraction &term);
+    bool operator>(const fraction &term);
+    bool operator>=(const fraction &term);
+    bool operator<(const fraction &term);
+    bool operator<=(const fraction &term);
+    bool operator==(const fraction &term);
+    bool operator!=(const fraction &term);
+    fraction& operator++();
+    fraction& operator++(int);
+    fraction& operator--();
+    fraction& operator--(int);
 };
 
 #endif // _FRACTION_H_
