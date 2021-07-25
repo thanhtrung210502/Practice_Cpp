@@ -7,6 +7,7 @@ int main()
 {
     fraction a{1,2};
     fraction b{1,3};
+    fraction d{1,3};
 
     fraction c;
     
@@ -27,6 +28,18 @@ int main()
 
     // int ret = b.compare(b);
     // cout << ret << "\n";
+
+    c = a + b + d;
+    c.display();
+
+    c = a - b - d;
+    c.display();
+
+    c = a * b * d;
+    c.display();
+
+    c = a / b / d;
+    c.display();
 
     return 0;
 }

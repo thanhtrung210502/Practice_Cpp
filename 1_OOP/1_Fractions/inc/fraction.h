@@ -21,6 +21,12 @@ public:
     void simplify(void);
     int compare(const fraction &term);
     void display(void);
+
+    // Overload  operator
+    fraction operator+(const fraction &term);
+    fraction operator-(const fraction &term);
+    fraction operator*(const fraction &term);
+    fraction operator/(const fraction &term);
 };
 
 #endif // _FRACTION_H_

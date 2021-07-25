@@ -85,3 +85,47 @@ void fraction::display(void)
 {
     std::cout << a << "/" << b << std::endl;
 }
+
+fraction fraction::operator+(const fraction &term)
+{
+    fraction result;
+    result.a = this->a * term.b + this->b * term.a;
+    result.b = this->b * term.b;
+
+    this->simplify();
+
+    return result;     
+}
+
+fraction fraction::operator-(const fraction &term)
+{
+    fraction result;
+    result.a = this->a * term.b - this->b * term.a;
+    result.b = this->b * term.b;
+
+    this->simplify();
+
+    return result;     
+}
+
+fraction fraction::operator*(const fraction &term)
+{
+    fraction result;
+    result.a = this->a * term.a;
+    result.b = this->b * term.b;
+
+    this->simplify();
+
+    return result;     
+}
+
+fraction fraction::operator/(const fraction &term)
+{
+    fraction result;
+    result.a = this->a * term.b;
+    result.b = this->b * term.a;
+
+    this->simplify();
+
+    return result;      
+}
